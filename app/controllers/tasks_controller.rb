@@ -4,9 +4,7 @@ class TasksController < ApplicationController
   before_action :correct_user, only: [:show, :edit, :update, :destroy]
   
   def index
-    if logged_in?
-      @tasks = current_user.tasks.all
-    end
+    @tasks = current_user.tasks.all
   end
   
   def show
